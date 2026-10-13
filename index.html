@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dery Ahnaf Rashad | Portofolio Teknik Elektro Industri PENS</title>
+  <meta name="description" content="Portofolio Resmi Dery Ahnaf Rashad - Mahasiswa D3 Teknik Elektro Industri PENS. Fokus pada Industrial Automation, PLC, Power Systems (ETAP), dan Electrical Maintenance." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+            },
+            accent: {
+              400: '#34d399',
+              500: '#10b981',
+            },
+            industrial: {
+              gold: '#f59e0b',
+              navy: '#0b132b',
+              surface: '#111c38',
+              card: '#162244',
+              border: '#1f305e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .circuit-glow {
+      box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-industrial-navy text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white bg-grid-pattern min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient background glow -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 right-10 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed bottom-20 left-1/3 w-96 h-96 bg-industrial-gold/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-industrial-navy/90 border-b border-industrial-border transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Name -->
+      <a href="#beranda" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-500 flex items-center justify-center font-bold text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="zap" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span class="font-bold text-lg tracking-tight block text-white group-hover:text-brand-400 transition-colors">Dery Ahnaf Rashad</span>
+          <span class="text-xs text-slate-400 font-mono tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> PENS • D3 ELIN A (2325500006)
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#beranda" class="hover:text-brand-400 transition-colors">Beranda</a>
+        <a href="#tentang" class="hover:text-brand-400 transition-colors">Tentang</a>
+        <a href="#keahlian" class="hover:text-brand-400 transition-colors">Keahlian</a>
+        <a href="#pengalaman" class="hover:text-brand-400 transition-colors">Pengalaman</a>
+        <a href="#proyek" class="hover:text-brand-400 transition-colors">Proyek</a>
+        <a href="#pendidikan" class="hover:text-brand-400 transition-colors">Pendidikan</a>
+        <a href="#kontak" class="hover:text-brand-400 transition-colors">Kontak</a>
+      </nav>
+
+      <!-- Action Button (Direct Contact) -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#kontak" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white transition flex items-center gap-2 shadow-md shadow-brand-500/20">
+          <i data-lucide="message-square" class="w-4 h-4"></i> Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-industrial-surface border-b border-industrial-border px-6 py-6 space-y-4">
+      <a href="#beranda" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Beranda</a>
+      <a href="#tentang" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Tentang Saya</a>
+      <a href="#keahlian" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Keahlian</a>
+      <a href="#pengalaman" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Pengalaman</a>
+      <a href="#proyek" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Proyek</a>
+      <a href="#pendidikan" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Pendidikan</a>
+      <a href="#kontak" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Kontak</a>
+      <div class="pt-4 border-t border-slate-700/60">
+        <a href="#kontak" class="w-full text-center px-4 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg bg-brand-600 hover:bg-brand-500 text-white transition flex items-center justify-center gap-2">
+          <i data-lucide="message-square" class="w-4 h-4"></i> Hubungi Saya
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28 py-12">
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section id="beranda" class="pt-4 sm:pt-10 scroll-mt-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Text & Intros -->
+        <div class="lg:col-span-8 space-y-6">
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/70 text-xs font-mono text-slate-300">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Politeknik Elektronika Negeri Surabaya • Angkatan 2025
+          </div>
+
+          <!-- Main Title & Headline -->
+          <div class="space-y-3">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Dery Ahnaf Rashad
+            </h1>
+            <p class="text-lg sm:text-2xl font-semibold bg-gradient-to-r from-brand-400 via-sky-300 to-accent-400 bg-clip-text text-transparent">
+              Industrial Electrical Engineering Student | PLC, Automation & Electrical Maintenance
+            </p>
+          </div>
+
+          <!-- Tagline Quote -->
+          <blockquote class="border-l-4 border-brand-500 pl-4 py-1 italic text-slate-300 text-sm sm:text-base font-light">
+            “Mengintegrasikan pemahaman sistem kelistrikan dengan solusi otomasi dan pemeliharaan industri yang praktis.”
+          </blockquote>
+
+          <!-- Brief Summary -->
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Mahasiswa D3 Teknik Elektro Industri yang memiliki ketertarikan pada sistem kendali, otomasi industri, sistem tenaga listrik, dan pemeliharaan peralatan listrik. Memiliki pengalaman praktik lapangan dalam instalasi kelistrikan, wiring panel, serta pemeliharaan dan troubleshooting alat berat. Terus mengembangkan kemampuan analisis dan simulasi kelistrikan menggunakan perangkat lunak teknik untuk mendukung kesiapan berkarier di bidang electrical engineering, field engineering, dan industri energi.
+          </p>
+
+          <!-- Badges -->
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-400 pt-1">
+            <span class="flex items-center gap-1.5 bg-slate-800/70 px-3 py-1.5 rounded-md border border-slate-700/50">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i> Surabaya, Jawa Timur
+            </span>
+            <span class="flex items-center gap-1.5 bg-slate-800/70 px-3 py-1.5 rounded-md border border-slate-700/50">
+              <i data-lucide="badge-check" class="w-3.5 h-3.5 text-brand-400"></i> NRP: 2325500006
+            </span>
+            <span class="flex items-center gap-1.5 bg-slate-800/70 px-3 py-1.5 rounded-md border border-slate-700/50">
+              <i data-lucide="wrench" class="w-3.5 h-3.5 text-amber-400"></i> PT. Adi Tehnik & PT. Prima Jasa Logistik
+            </span>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="#proyek" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 transition-all flex items-center gap-2.5">
+              <i data-lucide="folder-kanban" class="w-4 h-4"></i> Lihat Proyek Saya
+            </a>
+            <a href="#kontak" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-sm transition-all flex items-center gap-2.5">
+              <i data-lucide="send" class="w-4 h-4 text-accent-400"></i> Hubungi Saya
+            </a>
+            <a href="https://wa.me/6288991780441" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/40 font-semibold text-sm transition-all flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> WhatsApp Langsung
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile Photo Frame -->
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="relative group max-w-xs w-full">
+            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-accent-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+            <div class="relative bg-industrial-surface border border-industrial-border rounded-2xl p-4 overflow-hidden circuit-glow">
+              
+              <!-- Image with Fallback -->
+              <div class="aspect-square rounded-xl overflow-hidden bg-slate-900 border border-slate-700/70 relative">
+                <img 
+                  id="img-profil" 
+                  src="foto-profil/profil.jpg" 
+                  alt="Dery Ahnaf Rashad" 
+                  class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300"
+                  onclick="openLightbox(this.src, 'Foto Profil - Dery Ahnaf Rashad')"
+                  onerror="this.onerror=null; this.src='foto-profil/profil-placeholder.svg';"
+                />
+              </div>
+
+              <div class="pt-4 text-center">
+                <div class="font-bold text-white text-base">Dery Ahnaf Rashad</div>
+                <div class="text-xs text-brand-400 font-mono">D3 Teknik Elektro Industri PENS</div>
+                <div class="text-[11px] text-slate-400 mt-1">Kelas D3 ELIN A • Angkatan 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT ME ==================== -->
+    <section id="tentang" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">01. Profil Lengkap</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">About Me</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Latar Belakang & Pendekatan Teknis</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Text Narration -->
+        <div class="lg:col-span-8 space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+          <p>
+            Halo, saya <strong class="text-white">Dery Ahnaf Rashad</strong>. Saat ini saya sedang menempuh pendidikan D3 Teknik Elektro Industri di <strong class="text-slate-100">Politeknik Elektronika Negeri Surabaya (PENS)</strong>, angkatan 2025. Saya memiliki ketertarikan pada sistem kendali, otomasi industri, sistem tenaga listrik, serta pemeliharaan dan troubleshooting peralatan kelistrikan.
+          </p>
+          <p>
+            Ketertarikan tersebut saya kembangkan melalui pembelajaran akademik, proyek praktikum, simulasi sistem kelistrikan, dan pengalaman magang. Saya pernah menjalani pengalaman praktik di <strong class="text-brand-400 font-medium">PT. Adi Tehnik</strong> sebagai kontraktor listrik, dengan keterlibatan dalam wiring panel, instalasi dan penarikan kabel, pemasangan peralatan listrik, serta membantu teknisi di lapangan. Saya juga memiliki pengalaman di <strong class="text-amber-400 font-medium">PT. Prima Jasa Logistik</strong> dalam kegiatan pemeliharaan alat berat, troubleshooting kerusakan, perawatan mekanis, dan penggantian komponen bersama teknisi senior.
+          </p>
+          <p>
+            Dalam bidang akademik, saya mempelajari penggunaan perangkat lunak seperti <strong class="text-slate-100">ETAP, CX-Programmer, PSIM, KiCAD, AutoCAD, Proteus, dan FluidSIM/FluidCAD</strong> sesuai kebutuhan pembelajaran dan proyek. Saya tertarik mengembangkan kemampuan di bidang PLC, industrial automation, electrical maintenance, dan analisis sistem tenaga listrik. Ke depannya, saya ingin membangun karier sebagai <strong class="text-emerald-400 font-medium">Electrical Engineer atau Field Engineer</strong> di sektor industri, pembangkit listrik, maupun perusahaan energi dan manufaktur.
+          </p>
+        </div>
+
+        <!-- Quick Info Box -->
+        <div class="lg:col-span-4 bg-industrial-surface border border-industrial-border rounded-xl p-5 space-y-4">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider border-b border-industrial-border pb-2">
+            Target Posisi & Karier
+          </div>
+          <div class="space-y-3 text-xs">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+              <div><strong class="text-white">Electrical Engineer:</strong> Perancangan sistem kontrol & proteksi kelistrikan.</div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-400 shrink-0 mt-0.5"></i>
+              <div><strong class="text-white">Field Engineer:</strong> Penanganan operasional, instalasi & commissioning di lapangan.</div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+              <div><strong class="text-white">Maintenance Technician:</strong> Pemeliharaan preventif, korektif & troubleshooting peralatan.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. TECHNICAL SKILLS ==================== -->
+    <section id="keahlian" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">02. Kemampuan Teknis</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Technical Skills</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Didasarkan pada Pengalaman Aktual & Praktikum</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Electrical Simulation & Design -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-brand-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-brand-500/10 text-brand-400"><i data-lucide="activity" class="w-5 h-5"></i></div>
+              <span class="text-xs font-mono text-slate-400">Simulasi Sistem</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Electrical Simulation & Design</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400 mt-0.5 shrink-0"></i>
+                <span><strong>ETAP:</strong> Analisis aliran daya (load flow), tegangan bus, kabel, dan rugi daya.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400 mt-0.5 shrink-0"></i>
+                <span><strong>PSIM:</strong> Pembelajaran simulasi elektronika daya dan sirkuit listrik.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400 mt-0.5 shrink-0"></i>
+                <span><strong>AutoCAD:</strong> Gambar teknik dan diagram skematik kelistrikan.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400 mt-0.5 shrink-0"></i>
+                <span><strong>Proteus:</strong> Simulasi rangkaian elektronika terpadu.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">ETAP</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PSIM</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">AutoCAD</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Proteus</span>
+          </div>
+        </div>
+
+        <!-- 2. Automation & Control Systems -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-accent-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-accent-500/10 text-accent-400"><i data-lucide="binary" class="w-5 h-5"></i></div>
+              <span class="text-xs font-mono text-slate-400">Kontrol & Otomasi</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Automation & Control Systems</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-accent-400 mt-0.5 shrink-0"></i>
+                <span><strong>CX-Programmer:</strong> Pemrograman ladder diagram untuk PLC Omron.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Pengembangan logika kontrol sekuensial & ON-OFF.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Integrasi sensor, aktuator, timer, latch/reset, dan interlock.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">CX-Programmer</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Omron PLC</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Ladder Logic</span>
+          </div>
+        </div>
+
+        <!-- 3. Electrical Installation & Maintenance -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-amber-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-amber-500/10 text-industrial-gold"><i data-lucide="wrench" class="w-5 h-5"></i></div>
+              <span class="text-xs font-mono text-slate-400">Praktik Lapangan</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Installation & Maintenance</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-industrial-gold mt-0.5 shrink-0"></i>
+                <span>Wiring panel kontrol dan perakitan instalasi kabel listrik.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-industrial-gold mt-0.5 shrink-0"></i>
+                <span>Instalasi dan penarikan kabel serta pemasangan peralatan listrik.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-industrial-gold mt-0.5 shrink-0"></i>
+                <span>Troubleshooting kelistrikan dan pemeliharaan alat berat.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Wiring Panel</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Cable Pulling</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Troubleshooting</span>
+          </div>
+        </div>
+
+        <!-- 4. Electronic Design -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-emerald-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400"><i data-lucide="circuit-board" class="w-5 h-5"></i></div>
+              <span class="text-xs font-mono text-slate-400">Desain Elektronika</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Electronic Design (KiCAD)</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span>Pembuatan skematik sirkuit elektronika terstandar.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span>Perancangan tata letak (routing) jalur tembaga PCB.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span>Pemeriksaan koneksi (DRC) dan visualisasi model 3D board.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">KiCAD</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Schematic</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PCB 3D</span>
+          </div>
+        </div>
+
+        <!-- 5. Technical Tools (FluidSIM) -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-sky-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-sky-500/10 text-sky-400"><i data-lucide="gauge" class="w-5 h-5"></i></div>
+              <span class="text-xs font-mono text-slate-400">Sistem Fluida</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Technical Tools</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 mt-0.5 shrink-0"></i>
+                <span><strong>FluidSIM / FluidCAD:</strong> Simulasi sistem kendali pneumatik dan fluida.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 mt-0.5 shrink-0"></i>
+                <span>Pemahaman sirkuit katup pengarah dan aktuator silinder.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">FluidSIM</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Pneumatics</span>
+          </div>
+        </div>
+
+        <!-- 6. Soft Skills & Work Ethic -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-purple-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+              <span class="text-xs font-mono text-slate-400">Etos Kerja</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Soft Skills & Adaptabilitas</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400 mt-0.5 shrink-0"></i>
+                <span>Pemecahan masalah secara terstruktur (*troubleshooting mindset*).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400 mt-0.5 shrink-0"></i>
+                <span>Ketelitian kerja dan kepatuhan prosedur keselamatan (K3 listrik).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400 mt-0.5 shrink-0"></i>
+                <span>Kerja sama tim dan adaptabilitas di lingkungan teknis lapangan.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Problem Solving</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">K3 Listrik</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Teamwork</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. EXPERIENCE (PENGALAMAN MAGANG) ==================== -->
+    <section id="pengalaman" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">03. Rekam Jejak Lapangan</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Practical & Internship Experience</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Pengalaman Praktik Teknis di Industri</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Experience 1: PT. Adi Tehnik -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <!-- Photo Slot -->
+            <div class="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-700/80 relative">
+              <img 
+                src="foto-magang/magang-adi-tehnik.jpg" 
+                alt="Dokumentasi PT. Adi Tehnik" 
+                class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300"
+                onclick="openLightbox(this.src, 'Dokumentasi Praktik Lapangan - PT. Adi Tehnik (Wiring Panel)')"
+                onerror="this.onerror=null; this.src='foto-magang/adi-tehnik-placeholder.svg';"
+              />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Kontraktor Listrik</span>
+                <span class="text-xs text-slate-400 font-mono">Praktik Lapangan</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1.5">PT. Adi Tehnik – Electrical Contractor</h3>
+            </div>
+
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+                <span>Terlibat dalam pekerjaan wiring panel dan rangkaian kontrol kelistrikan.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+                <span>Membantu proses instalasi serta penarikan kabel listrik sesuai rute yang ditentukan.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+                <span>Membantu pemasangan dan pengujian fisik peralatan listrik di lokasi proyek.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+                <span>Mendukung teknisi senior dalam pelaksanaan pekerjaan dan kepatuhan K3 di lapangan.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between text-xs font-mono text-slate-400">
+            <span>Fokus: Wiring & Instalasi Daya</span>
+            <span class="text-brand-400">Teknisi Lapangan</span>
+          </div>
+        </div>
+
+        <!-- Experience 2: PT. Prima Jasa Logistik -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-amber-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <!-- Photo Slot -->
+            <div class="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-700/80 relative">
+              <img 
+                src="foto-magang/magang-prima-jasa.jpg" 
+                alt="Dokumentasi PT. Prima Jasa Logistik" 
+                class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300"
+                onclick="openLightbox(this.src, 'Dokumentasi Praktik Lapangan - PT. Prima Jasa Logistik (Alat Berat)')"
+                onerror="this.onerror=null; this.src='foto-magang/prima-jasa-placeholder.svg';"
+              />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 text-industrial-gold border border-amber-500/20">Pemeliharaan Armada</span>
+                <span class="text-xs text-slate-400 font-mono">Praktik Lapangan</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1.5">PT. Prima Jasa Logistik – Heavy Equipment Maintenance</h3>
+            </div>
+
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-industrial-gold shrink-0 mt-0.5"></i>
+                <span>Membantu kegiatan pemeliharaan mesin dan armada alat berat operasional.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-industrial-gold shrink-0 mt-0.5"></i>
+                <span>Terlibat dalam proses troubleshooting kerusakan kelistrikan dan mekanik peralatan.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-industrial-gold shrink-0 mt-0.5"></i>
+                <span>Membantu perawatan mekanis preventif dan penggantian komponen bersama teknisi senior.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-industrial-gold shrink-0 mt-0.5"></i>
+                <span>Bekerja sama dalam tim teknis untuk memastikan kesiapan unit operasional industri.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between text-xs font-mono text-slate-400">
+            <span>Fokus: Pemeliharaan & Troubleshooting</span>
+            <span class="text-industrial-gold">Mekanik & Teknisi</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. PROJECT PORTFOLIO ==================== -->
+    <section id="proyek" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">04. Portofolio Proyek</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Featured Projects</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Simulasi Daya, Otomasi PLC, dan Desain Hardware</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Proyek 1 (Unggulan 1): ETAP Load Flow Analysis -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <!-- Image Slot -->
+            <div class="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-700/80 relative">
+              <img 
+                src="foto-proyek/proyek-etap.jpg" 
+                alt="ETAP Load Flow Analysis" 
+                class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300"
+                onclick="openLightbox(this.src, 'Proyek 1: Analisis Aliran Daya Menggunakan ETAP')"
+                onerror="this.onerror=null; this.src='foto-proyek/etap-placeholder.svg';"
+              />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Power Systems</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">Proyek Utama 1</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1.5">Analisis Aliran Daya Sistem Tenaga Listrik Menggunakan ETAP</h3>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong>Overview:</strong> Proyek praktikum analisis aliran daya pada sistem tenaga listrik menggunakan ETAP untuk mempelajari distribusi daya, profil tegangan bus, pembebanan kabel, dan rugi-rugi daya.
+            </p>
+
+            <div class="space-y-1.5 text-xs text-slate-400 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              <div><strong class="text-slate-200">Problem:</strong> Mengevaluasi kondisi operasi sistem tenaga listrik dan mengidentifikasi tegangan bus di bawah batas nominal, pembebanan kabel berlebih, dan rugi daya.</div>
+              <div><strong class="text-slate-200">Solution:</strong> Menyusun single-line diagram, menjalankan simulasi load flow, menganalisis profil tegangan, dan mengevaluasi penyesuaian pengaturan LTC pada transformator.</div>
+              <div><strong class="text-slate-200">Technology:</strong> ETAP (Load Flow Analysis Module).</div>
+              <div><strong class="text-slate-200">Role:</strong> Electrical Engineering Student / Praktikan Analisis Sistem Tenaga.</div>
+              <div class="pt-1 text-slate-300">
+                <strong class="text-brand-400">Result (Data Aktual):</strong> Simulasi awal menunjukkan permasalahan tegangan pada beberapa bus, overload Cable 2, dan rugi-rugi <strong>612,6 kW</strong>. Setelah penyesuaian LTC sekunder Trafo 1, masalah tegangan bus terselesaikan dan rugi-rugi turun menjadi <strong>591,5 kW</strong>. Pembebanan berlebih pada Cable 2 dicatat secara objektif masih ditemukan.
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">Software: ETAP</span>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Simulasi Tervalidasi
+            </span>
+          </div>
+        </div>
+
+        <!-- Proyek 2 (Unggulan 2): Automatic Liquid Filling System -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-accent-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <!-- Image Slot -->
+            <div class="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-700/80 relative">
+              <img 
+                src="foto-proyek/proyek-plc-liquid.jpg" 
+                alt="Automatic Liquid Filling System" 
+                class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300"
+                onclick="openLightbox(this.src, 'Proyek 2: Sistem Otomasi Pengisian Cairan Menggunakan PLC Omron')"
+                onerror="this.onerror=null; this.src='foto-proyek/plc-liquid-placeholder.svg';"
+              />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent-500/10 text-accent-400 border border-accent-500/20">Industrial Automation</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-brand-500/20 text-brand-400 font-semibold">Proyek Utama 2</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1.5">Sistem Otomasi Pengisian Cairan Menggunakan PLC</h3>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong>Overview:</strong> Proyek praktikum otomasi industri yang berfokus pada pengendalian proses pengisian cairan secara berurutan menggunakan PLC Omron, sensor posisi, konveyor, dan aktuator katup pengisian.
+            </p>
+
+            <div class="space-y-1.5 text-xs text-slate-400 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              <div><strong class="text-slate-200">Problem:</strong> Proses pengisian membutuhkan urutan kerja teratur, penghentian konveyor tepat di posisi botol, serta koordinasi interlock agar cairan tidak tumpah.</div>
+              <div><strong class="text-slate-200">Solution:</strong> Menyusun ladder diagram di CX-Programmer untuk memproses masukan sensor, menghentikan konveyor, mengaktifkan katup, dan melanjutkan siklus secara otomatis.</div>
+              <div><strong class="text-slate-200">Technology:</strong> Omron PLC dan CX-Programmer.</div>
+              <div><strong class="text-slate-200">Role:</strong> PLC Programming / Control System Practicum.</div>
+              <div class="pt-1 text-slate-300">
+                <strong class="text-accent-400">Result:</strong> Logika kontrol dan urutan operasi terverifikasi bekerja stabil dalam simulasi CX-Programmer; sensor posisi memicu stop konveyor dan interlock mencegah pengisian saat konveyor berjalan.
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">CX-Programmer • PLC Omron</span>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Simulasi Terverifikasi
+            </span>
+          </div>
+        </div>
+
+        <!-- Proyek 3 (Pendukung): Water Level Control (WLC) -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-sky-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <!-- Image Slot -->
+            <div class="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-700/80 relative">
+              <img 
+                src="foto-proyek/proyek-wlc-pompa.jpg" 
+                alt="Water Level Control System" 
+                class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300"
+                onclick="openLightbox(this.src, 'Proyek 3: Sistem Kontrol Level Air dan Pengoperasian Pompa Bergantian')"
+                onerror="this.onerror=null; this.src='foto-proyek/wlc-pompa-placeholder.svg';"
+              />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Process Instrumentation</span>
+                <span class="text-xs font-mono text-slate-400">Proyek Pendukung</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1.5">Sistem Kontrol Level Air & Pengoperasian Pompa Bergantian</h3>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong>Overview:</strong> Proyek kontrol yang mempelajari pengaturan level air pada tangki dan pengoperasian dua kelompok pompa secara bergantian sesuai kondisi serta interval waktu 12 jam yang ditentukan.
+            </p>
+
+            <div class="space-y-1.5 text-xs text-slate-400 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              <div><strong class="text-slate-200">Problem:</strong> Menjaga ketersediaan air tangki secara kontinu sekaligus mencegah keausan dini motor dan meredam lonjakan arus mula pompa berdaya menengah.</div>
+              <div><strong class="text-slate-200">Solution:</strong> Memadukan sensor WLC untuk deteksi level, timer 12 jam untuk pergantian pompa otomatis, dan konsep rangkaian starter Star-Delta.</div>
+              <div><strong class="text-slate-200">Technology:</strong> Water Level Control (WLC), CX-Programmer, Konsep Star-Delta.</div>
+              <div><strong class="text-slate-200">Role:</strong> Electrical Control Practicum.</div>
+              <div class="pt-1 text-slate-300">
+                <strong class="text-sky-400">Result:</strong> Logika pergantian kelompok pompa 12 jam dan respon cut-off level air terverifikasi berjalan sesuai skenario kontrol.
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">WLC • Star-Delta • Timer 12H</span>
+            <span class="text-xs font-mono text-sky-400 flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Desain & Simulasi
+            </span>
+          </div>
+        </div>
+
+        <!-- Proyek 4 (Pendukung): KiCAD Schematic & PCB -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-emerald-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <!-- Image Slot -->
+            <div class="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-slate-700/80 relative">
+              <img 
+                src="foto-proyek/proyek-kicad-pcb.jpg" 
+                alt="KiCAD Schematic & PCB Design" 
+                class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300"
+                onclick="openLightbox(this.src, 'Proyek 4: Perancangan Skematik dan Model PCB Menggunakan KiCAD')"
+                onerror="this.onerror=null; this.src='foto-proyek/kicad-pcb-placeholder.svg';"
+              />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Electronic Hardware</span>
+                <span class="text-xs font-mono text-slate-400">Proyek Pendukung</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1.5">Perancangan Skematik & Model PCB Menggunakan KiCAD</h3>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong>Overview:</strong> Proyek desain elektronika yang berfokus pada pembuatan skematik rangkaian dan visualisasi desain layout PCB tiga dimensi (3D) menggunakan software KiCAD.
+            </p>
+
+            <div class="space-y-1.5 text-xs text-slate-400 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              <div><strong class="text-slate-200">Problem:</strong> Rangkaian eksperimen memerlukan dokumentasi hubungan komponen yang terstandar dan tata letak jalur yang rapi untuk menghindari noise dan koneksi longgar.</div>
+              <div><strong class="text-slate-200">Solution:</strong> Menyusun skematik, menghubungkan simbol komponen, menetapkan footprint, dan menarik jalur routing PCB dengan verifikasi Design Rule Check (DRC).</div>
+              <div><strong class="text-slate-200">Technology:</strong> KiCAD (Schematic Capture, PCB Layout, 3D Viewer).</div>
+              <div><strong class="text-slate-200">Role:</strong> Electronic Design Practicum.</div>
+              <div class="pt-1 text-slate-300">
+                <strong class="text-emerald-400">Result:</strong> Desain skematik dan berkas layout PCB selesai diverifikasi DRC tanpa galat koneksi dan siap untuk visualisasi 3D.
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">KiCAD • PCB 3D • DRC</span>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Desain Software Selesai
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. EDUCATION ==================== -->
+    <section id="pendidikan" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">05. Riwayat Formal</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Education & Academic Background</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Pendidikan Tinggi Vokasi Rekayasa</p>
+      </div>
+
+      <div class="bg-industrial-surface border border-industrial-border rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row gap-6 items-start justify-between">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-brand-400 font-bold border border-slate-700 text-xl">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Politeknik Elektronika Negeri Surabaya (PENS)</h3>
+              <p class="text-sm font-medium text-brand-400">D3 Teknik Elektro Industri (ELIN)</p>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            Menempuh pendidikan vokasi rekayasa elektro dengan kurikulum yang menitikberatkan pada penguasaan teori fundamental kelistrikan, praktik laboratorium intensif, analisis sistem tenaga, serta otomasi berbasis PLC.
+          </p>
+
+          <div class="pt-2">
+            <span class="text-xs font-mono uppercase text-slate-400 block mb-2">Fokus Pembelajaran Akademik:</span>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Analisis Aliran Daya (ETAP)</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Pemrograman PLC (CX-Programmer)</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Mesin Listrik & Pembangkitan</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Instalasi & Proteksi Kelistrikan</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Elektronika Daya & KiCAD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shrink-0 bg-industrial-card border border-industrial-border rounded-xl p-4 text-xs font-mono space-y-2.5 w-full md:w-60">
+          <div class="flex justify-between text-slate-400 pb-1.5 border-b border-slate-700">
+            <span>Kelas</span>
+            <strong class="text-white">D3 ELIN A</strong>
+          </div>
+          <div class="flex justify-between text-slate-400 pb-1.5 border-b border-slate-700">
+            <span>NRP</span>
+            <strong class="text-brand-400">2325500006</strong>
+          </div>
+          <div class="flex justify-between text-slate-400 pb-1.5 border-b border-slate-700">
+            <span>Angkatan</span>
+            <strong class="text-white">2025</strong>
+          </div>
+          <div class="flex justify-between text-slate-400">
+            <span>Status</span>
+            <strong class="text-emerald-400">Mahasiswa Aktif</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. CONTACT ==================== -->
+    <section id="kontak" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">06. Hubungi Saya</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Let's Connect</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Diskusi Teknis & Peluang Kolaborasi</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Contact Information -->
+        <div class="lg:col-span-5 space-y-4">
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Tertarik berdiskusi mengenai sistem kelistrikan, PLC dan otomasi industri, pemeliharaan peralatan, atau analisis sistem tenaga listrik? Mari terhubung dan bertukar pengetahuan.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <!-- Email -->
+            <a href="mailto:deryahnaf@gmail.com" class="p-4 rounded-xl bg-industrial-surface border border-industrial-border hover:border-brand-500/50 flex items-center gap-4 transition group">
+              <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="text-xs text-slate-400 font-mono">Email</div>
+                <div class="text-sm font-semibold text-white truncate group-hover:text-brand-400 transition-colors">deryahnaf@gmail.com</div>
+              </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6288991780441" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-industrial-surface border border-industrial-border hover:border-accent-500/50 flex items-center gap-4 transition group">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-mono">WhatsApp</div>
+                <div class="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">088991780441</div>
+              </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/dahshad_03" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-industrial-surface border border-industrial-border hover:border-pink-500/50 flex items-center gap-4 transition group">
+              <div class="w-10 h-10 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-mono">Instagram</div>
+                <div class="text-sm font-semibold text-white group-hover:text-pink-400 transition-colors">@dahshad_03</div>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="p-4 rounded-xl bg-industrial-surface border border-industrial-border flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-mono">Domisili</div>
+                <div class="text-sm font-semibold text-white">Surabaya, Jawa Timur, Indonesia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Direct Inquiry Card -->
+        <div class="lg:col-span-7 bg-industrial-surface border border-industrial-border rounded-2xl p-6 sm:p-8 space-y-4">
+          <div class="flex items-center gap-2 text-brand-400 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="send" class="w-4 h-4"></i> Komunikasi Cepat
+          </div>
+          <h3 class="text-lg font-bold text-white">Siap Berkontribusi di Bidang Kelistrikan Industri</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Terbuka untuk kesempatan magang industri, program pelatihan, atau diskusi teknis seputar simulasi sistem tenaga (ETAP), otomasi PLC, dan pemeliharaan kelistrikan. Silakan hubungi saya melalui tombol di bawah ini:
+          </p>
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="mailto:deryahnaf@gmail.com?subject=Tawaran%20Diskusi%20Kelistrikan%20-%20Dery%20Ahnaf" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4"></i> Kirim Email Langsung
+            </a>
+            <a href="https://wa.me/6288991780441?text=Halo%20Dery,%20saya%20tertarik%20untuk%20berdiskusi%20mengenai%20proyek%20kelistrikan" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition flex items-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Chat via WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-28 border-t border-industrial-border bg-industrial-navy/90 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
+      <div>
+        © 2026 <strong class="text-slate-200">Dery Ahnaf Rashad</strong> (NRP: 2325500006) • D3 Teknik Elektro Industri PENS.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#beranda" class="hover:text-brand-400 transition">Kembali ke Atas ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+    <div class="relative max-w-4xl w-full bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden p-3" onclick="event.stopPropagation()">
+      <button class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-slate-800/80 hover:bg-slate-700 text-white flex items-center justify-center" onclick="closeLightbox()">
+        ✕
+      </button>
+      <div class="max-h-[75vh] flex items-center justify-center overflow-hidden rounded-xl bg-black/40">
+        <img id="lightbox-img" src="" alt="Preview" class="max-h-[75vh] w-auto object-contain" />
+      </div>
+      <div id="lightbox-caption" class="pt-3 px-2 text-center text-xs font-mono text-slate-300"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Lightbox Modal Functions
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption || '';
+      modal.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox');
+      modal.classList.add('hidden');
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
